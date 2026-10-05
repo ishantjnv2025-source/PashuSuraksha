@@ -1,0 +1,101 @@
+/* Custom styles and enhancements for PashuSuraksha UI */
+
+@layer utilities {
+  /* Smooth transitions for interactive elements */
+  .transition-all-custom {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Glassmorphism background blur */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-card-dark {
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* Custom subtle drop shadow */
+  .shadow-soft {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 5px 15px -5px rgba(0, 0, 0, 0.02);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.7);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pulse-hazard {
+  animation: pulseGlow 2s infinite;
+}
+
+/* Custom Scrollbar for dashboards */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Styles for Veterinary Prescriptions & Reports */
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
